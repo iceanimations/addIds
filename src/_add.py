@@ -11,6 +11,7 @@ from PyQt4.QtGui import QMessageBox, QFileDialog
 import msgBox
 import os.path as osp
 import qutil
+from loader.command.python import RedshiftAOVTools
 
 root_path = osp.dirname(osp.dirname(__file__))
 ui_path = osp.join(root_path, 'ui')
@@ -63,4 +64,6 @@ class Window(Form, Base):
             for shape in obj.getShapes():
                 shape.rsObjectId.set(ids[count])
             count += 1
+        RedshiftAOVTools.fixAOVPrefixes()
         self.statusBar().showMessage("IDs added successfully", 2000)
+        pc.mel.redshiftUpdateActiveAovList()
