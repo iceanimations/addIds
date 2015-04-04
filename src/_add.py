@@ -63,3 +63,4 @@ class Window(Form, Base):
             for shape in obj.getShapes():
                 shape.rsObjectId.set(ids[count])
             count += 1
+        self.statusBar().showMessage("IDs added successfully", 2000)
