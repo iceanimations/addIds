@@ -59,6 +59,9 @@ class Window(Form, Base):
             aov.greenId.set(ids[1])
             aov.blueId.set(ids[2])
             aov.mode.set(1)
+            aov.enabled.set(0)
+            pc.editRenderLayerAdjustment(aov.enabled)
+            aov.enabled.set(1)
             pc.rename(aov, aovName)
         count = 0
         for obj in objs:
