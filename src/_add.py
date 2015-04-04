@@ -58,6 +58,7 @@ class Window(Form, Base):
             aov.redId.set(ids[0])
             aov.greenId.set(ids[1])
             aov.blueId.set(ids[2])
+            aov.mode.set(1)
             pc.rename(aov, aovName)
         count = 0
         for obj in objs:
